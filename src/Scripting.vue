@@ -16,7 +16,10 @@
                     <div class="mb-5">
                         <p>Verwijder alle dubbele waardes uit de array</p>
                         <code>
-                            const arr = [1, 2, 2, 3, 2, 3, 4, 5, 4, 1, 4, 5]
+                            const arr = [1, 2, 2, 3, 2, 3, 4, 5, 4, 1, 4, 5];
+                            const newArr = [] arr.forEach((e)=> {
+                            if(!newArr.includes(e)){ newArr.push(e); } });
+                            console.log(newArr);
                         </code>
                     </div>
 
@@ -25,7 +28,14 @@
                             Schrijf een util functie die een getal omzet naar
                             een financiele notatie
                         </p>
-                        <code>Resultaat: € 108,25</code>
+                        <code>
+                            const price = 108.25
+                            let euro = new Intl.NumberFormat('nl-NL',{
+                                style: 'currency',
+                                currency: "EUR",
+                            });
+                            console.log(`${price} is ${euro.format(price)}`);
+                        </code>
                     </div>
 
                     <div class="mb-5">
