@@ -40,19 +40,21 @@
                         src="./assets/images/product-tile.png"
                     />
                 </div>
-
-                <div class="product-tegels">
                     <h3>Product tegels</h3>
-
+                    <div class="flex-container">
                     <div class="product-tegel">
                         <h4>Product</h4>
+                        <hr class="product-tile__divider">
                         <dl>
                             <dt>Vergoeding 1</dt>
                             <dd>Lorem ipsum dolor sit amet</dd>
+                            <hr class="product-tile__divider">
                             <dt>Vergoeding 2</dt>
                             <dd>Lorem ipsum dolor sit amet</dd>
+                            <hr class="product-tile__divider">
                             <dt>Vergoeding 3</dt>
                             <dd>Lorem ipsum dolor sit amet</dd>
+                            <hr class="product-tile__divider">
                         </dl>
                         <h4>€0,00</h4>
                         <button>Kies</button>
@@ -60,17 +62,23 @@
 
                     <div class="product-tegel">
                         <h4>Product</h4>
+                        <hr class="product-tile__divider">
                         <dl>
                             <dt>Vergoeding 1</dt>
                             <dd>Lorem ipsum dolor sit amet</dd>
+                            <hr class="product-tile__divider">
                             <dt>Vergoeding 2</dt>
                             <dd>Lorem ipsum dolor sit amet</dd>
+                            <hr class="product-tile__divider">
                             <dt>Vergoeding 3</dt>
                             <dd>Lorem ipsum dolor sit amet</dd>
+                            <hr class="product-tile__divider">
                             <dt>Vergoeding 4</dt>
                             <dd>Lorem ipsum dolor sit amet</dd>
+                            <hr class="product-tile__divider">
                             <dt>Vergoeding 5</dt>
                             <dd>Lorem ipsum dolor sit amet</dd>
+                            <hr class="product-tile__divider">
                         </dl>
                         <h4>€0,00</h4>
                         <button>Kies</button>
@@ -78,15 +86,20 @@
 
                     <div class="product-tegel">
                         <h4>Product</h4>
+                        <hr class="product-tile__divider">
                         <dl>
                             <dt>Vergoeding 1</dt>
                             <dd>Lorem ipsum dolor sit amet</dd>
+                            <hr class="product-tile__divider">
                             <dt>Vergoeding 2</dt>
                             <dd>Lorem ipsum dolor sit amet</dd>
+                            <hr class="product-tile__divider">
                             <dt>Vergoeding 3</dt>
                             <dd>Lorem ipsum dolor sit amet</dd>
+                            <hr class="product-tile__divider">
                             <dt>Vergoeding 4</dt>
                             <dd>Lorem ipsum dolor sit amet</dd>
+                            <hr class="product-tile__divider">
                         </dl>
                         <h4>€0,00</h4>
                         <button>Kies</button>
