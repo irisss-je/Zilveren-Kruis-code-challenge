@@ -28,19 +28,21 @@
                     <h3>Persoonlijke gegevens</h3>
                     <div class="form-input my-4">
                         <div class="input__group">
-                            <label class="input__title">Naam</label>
+                            <label class="input__title">Voornaam</label>
                             <input
                                 class="input__field form-control"
                                 type="text"
+                                v-model="voornaam"
                             />
                         </div>
                     </div>
                     <div class="form-input my-4">
                         <div class="input__group">
-                            <label class="input__title"> Tussenvoegsels </label>
+                            <label class="input__title">Tussenvoegsels</label>
                             <input
                                 class="input__field form-control"
                                 type="text"
+                                v-model="tussenvoegsels"
                             />
                         </div>
                     </div>
@@ -50,6 +52,7 @@
                             <input
                                 class="input__field form-control"
                                 type="text"
+                                v-model="achternaam"
                             />
                         </div>
                     </div>
@@ -328,3 +331,16 @@
         </div>
     </div>
 </template>
+
+<script lang="ts">
+export default {
+    name: 'Form',
+    data() {
+        return {
+            voornaam: '',
+            tussenvoegsels: '',
+            achternaam: '',
+        };
+    }
+};
+</script>
