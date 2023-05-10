@@ -28,7 +28,7 @@
                     <h3>Persoonlijke gegevens</h3>
                     <div class="form-input my-4">
                         <div class="input__group">
-                            <label class="input__title">Voornaam</label>
+                            <label class="input__title">Naam</label>
                             <input
                                 class="input__field form-control"
                                 type="text"
@@ -94,10 +94,7 @@
                     <div class="form-input my-4">
                         <div class="input__group">
                             <label class="input__title"> Geboortedatum </label>
-                            <input
-                                class="input__field form-control"
-                                type="text"
-                            />
+                            <VueDatePicker v-model="date"></VueDatePicker>
                         </div>
                     </div>
                     <div class="form-input my-4">
@@ -333,13 +330,18 @@
 </template>
 
 <script lang="ts">
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css';
+
 export default {
     name: 'Form',
+    components: { VueDatePicker },
     data() {
         return {
             voornaam: '',
             tussenvoegsels: '',
             achternaam: '',
+            date: null
         };
     }
 };
