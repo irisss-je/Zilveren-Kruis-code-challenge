@@ -105,16 +105,17 @@
                             <input
                                 class="input__field form-control is-invalid"
                                 type="text"
+                                v-model="myBsn"
+                                @keyup="handleSubmit"
                             />
                         </div>
                         <div
                             class="input__feedback invalid-feedback mt-1"
                             aria-live="polite"
+                            :class="myClass"
+                            v-if="bsnError"
                         >
-                            <span
-                                >Helaas is het ingevoerde burgerservicenummer
-                                niet geldig. Probeer het opnieuw.</span
-                            >
+                            <span>{{ bsnError }} </span>
                         </div>
                     </div>
                 </div>
@@ -141,6 +142,7 @@
                                         name="radio-insurance"
                                         id="radio-insurance-basis-budget"
                                         class="radio__input custom-control-input"
+                                        v-model="checked"
                                     />
                                     <label
                                         for="radio-insurance-basis-budget"
@@ -166,6 +168,7 @@
                                         name="radio-insurance"
                                         id="radio-insurance-basis-zeker"
                                         class="radio__input custom-control-input"
+                                        v-model="checked"
                                     />
                                     <label
                                         for="radio-insurance-basis-zeker"
@@ -188,6 +191,7 @@
                                         name="radio-insurance"
                                         id="radio-insurance-basis-exclusief-(restitutie)"
                                         class="radio__input custom-control-input"
+                                        v-model="checked"
                                     />
                                     <label
                                         for="radio-insurance-basis-exclusief-(restitutie)"
@@ -219,7 +223,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div v-if="checked" class="form-group">
                     <h3>Eigen risico</h3>
                     <div class="form-input my-4">
                         <div class="input__group">
@@ -293,35 +297,33 @@
                     <h3>Adres en contactgegevens</h3>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card card--filled-secondary h-auto">
-                    <div class="card-body">
-                        <div class="sf-contactblok-content">
-                            <h3 class="mb-2">We staan voor je klaar</h3>
-                            <p class="mb-5">Twijfel je? Heb je een vraag?</p>
-                            <div class="phonenumber mb-2">
-                                <a href="tel:0900 040 03 09">
+        </div>
+        <div class="col-4">
+            <div class="card card--filled-secondary h-auto">
+                <div class="card-body">
+                    <div class="sf-contactblok-content">
+                        <h3 class="mb-2">We staan voor je klaar</h3>
+                        <p class="mb-5">Twijfel je? Heb je een vraag?</p>
+                        <div class="phonenumber mb-2">
+                            <a href="tel:0900 040 03 09">
+                                <span class="sr-only"> Telefoonnummer </span>
+                                0900 040 03 09
+                            </a>
+                            <div class="popover__container ml-1">
+                                <button
+                                    id="info-phone"
+                                    type="button"
+                                    class="btn popover__btn btn--popover btn-none"
+                                >
                                     <span class="sr-only">
-                                        Telefoonnummer
+                                        Informatie weergeven
                                     </span>
-                                    0900 040 03 09
-                                </a>
-                                <div class="popover__container ml-1">
-                                    <button
-                                        id="info-phone"
-                                        type="button"
-                                        class="btn popover__btn btn--popover btn-none"
-                                    >
-                                        <span class="sr-only">
-                                            Informatie weergeven
-                                        </span>
-                                    </button>
-                                </div>
+                                </button>
                             </div>
-                            <small>
-                                Open op maandag t/m vrijdag van 08:00 tot 17:00
-                            </small>
                         </div>
+                        <small>
+                            Open op maandag t/m vrijdag van 08:00 tot 17:00
+                        </small>
                     </div>
                 </div>
             </div>
@@ -341,8 +343,18 @@ export default {
             voornaam: '',
             tussenvoegsels: '',
             achternaam: '',
-            date: null
+            date: null,
+            myBsn: '',
+            myClass: 'valid',
+            bsnError: '',
+            checked: false
         };
+    },
+    methods: {
+        handleSubmit() {
+            this.bsnError = this.myBsn.length === 9 ?
+            '': 'Helaas is het ingevoerde burgerservicenummer niet geldig. Probeer het opnieuw.'
+        }
     }
 };
 </script>
