@@ -352,8 +352,10 @@ export default {
     },
     methods: {
         handleSubmit() {
-            this.bsnError = this.myBsn.length === 9 ?
-            '': 'Helaas is het ingevoerde burgerservicenummer niet geldig. Probeer het opnieuw.'
+            this.bsnError =
+                this.myBsn.length === 9
+                    ? ''
+                    : 'Helaas is het ingevoerde burgerservicenummer niet geldig. Probeer het opnieuw.';
         }
     }
 };
