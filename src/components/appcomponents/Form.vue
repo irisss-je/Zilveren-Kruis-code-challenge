@@ -66,6 +66,8 @@
                                         class="radio__input custom-control-input"
                                         type="radio"
                                         name="geslacht"
+                                        value="man"
+                                        v-model="pickedGender"
                                     />
                                     <label
                                         class="radio__label custom-control-label"
@@ -80,6 +82,8 @@
                                         class="radio__input custom-control-input"
                                         type="radio"
                                         name="geslacht"
+                                        value="vrouw"
+                                        v-model="pickedGender"
                                     />
                                     <label
                                         class="radio__label custom-control-label"
@@ -215,7 +219,10 @@
                             <label class="input__title">
                                 Kies je betaaltermijn
                             </label>
-                            <select class="form-control">
+                            <select
+                                class="form-control"
+                                v-model="selectedTermijn"
+                            >
                                 <option>per maand</option>
                                 <option>per kwartaal</option>
                                 <option selected>per jaar</option>
@@ -230,7 +237,10 @@
                             <label class="input__title">
                                 Kies de hoogste van het eigen risico
                             </label>
-                            <select class="form-control">
+                            <select
+                                class="form-control"
+                                v-model="selectedRisico"
+                            >
                                 <option>€ 385 - verplicht eigen risico</option>
                                 <option>
                                     € 885 - korting van € 22 per jaar
@@ -252,7 +262,7 @@
                             <label class="input__title">
                                 Kies uw aanvullende verzekering
                             </label>
-                            <select class="form-control">
+                            <select class="form-control" v-model="selectedAV">
                                 <option selected>
                                     Geen aanvullende verzekering geselecteerd
                                 </option>
@@ -274,7 +284,7 @@
                             <label class="input__title">
                                 Kies uw tandartsverzekering
                             </label>
-                            <select class="form-control">
+                            <select class="form-control" v-model="selectedTand">
                                 <option selected>
                                     Geen tandartsverzekering geselecteerd
                                 </option>
@@ -289,12 +299,24 @@
                 <h2 class="mt-5">Controleren</h2>
                 <div class="form-group">
                     <h3>Gekozen pakket</h3>
+                    <div>{{ checked }}</div>
+                    <div>Betaaltermijn: {{ selectedTermijn }}</div>
+                    <div>{{ selectedRisico }}</div>
+                    <div>{{ selectedAV }}</div>
+                    <div>{{ selectedTand }}</div>
                 </div>
                 <div class="form-group">
                     <h3>Totaalpremie</h3>
                 </div>
                 <div class="form-group">
                     <h3>Adres en contactgegevens</h3>
+                    <div>
+                        Naam: {{ voornaam }} {{ tussenvoegsels }}
+                        {{ achternaam }}
+                    </div>
+                    <div>Geboortedatum: {{ date }}</div>
+                    <div>Geslacht: {{ pickedGender }}</div>
+                    <div>Burgerservicenummer: {{ myBsn }}</div>
                 </div>
             </div>
         </div>
@@ -347,7 +369,12 @@ export default {
             myBsn: '',
             myClass: 'valid',
             bsnError: '',
-            checked: false
+            checked: false,
+            pickedGender: '',
+            selectedRisico: '',
+            selectedTermijn: '',
+            selectedAV: '',
+            selectedTand: ''
         };
     },
     methods: {
