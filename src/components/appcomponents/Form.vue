@@ -299,7 +299,7 @@
                 <h2 class="mt-5">Controleren</h2>
                 <div class="form-group">
                     <h3>Gekozen pakket</h3>
-                    <div>{{ checked }}</div>
+                    <div v-if="checked">{{ checked }}</div>
                     <div>Betaaltermijn: {{ selectedTermijn }}</div>
                     <div>{{ selectedRisico }}</div>
                     <div>{{ selectedAV }}</div>
